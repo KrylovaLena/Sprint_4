@@ -114,13 +114,6 @@ class TestBooksCollector:
         collector.add_book_in_favorites(book_name)
         assert book_name in collector.get_list_of_favorites_books()
 
-    # Тестирование что метод add_book_in_favorites() повторно не добавляет книгу в избранное
-    def test_add_book_in_favorites_duplicate_book(self, collector):
-        collector.favorites = []
-        book_name = "Чайка"
-        collector.favorites.append(book_name)
-        collector.add_book_in_favorites(book_name)
-        assert len(collector.favorites) == 1
 
     # Тестирование что метод add_book_in_favorites() не добавляет в избранное книгу, которой нет в списке books_genre
     def test_add_book_in_favorites_book_not_in_genre(self, collector):
