@@ -41,13 +41,12 @@ class TestBooksCollector:
         collector.add_new_book(book_title)
         assert (book_title in collector.get_books_genre()) == expected_result
 
-
     # Тестирование что жанр книги правильно сохранен в словаре books_genre
     def test_set_book_genre_the_genre_is_correctly_saved_in_the_dict(self):
         collector = BooksCollector()
         collector.add_new_book("Властелин Колец")
         collector.set_book_genre("Властелин Колец", "Фантастика")
-        assert collector.books_genre["Властелин Колец"] == "Фантастика"
+        assert collector.get_book_genre("Властелин Колец") == "Фантастика"
 
     # Тестирование что жанр книги не устанавливается, если выбранного жанра нет в списке genre
     def test_set_book_genre_genre_is_missing(self):
