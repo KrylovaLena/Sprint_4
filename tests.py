@@ -103,8 +103,7 @@ class TestBooksCollector:
         assert books_genre["Властелин Колец"] == "Фантастика"
 
     # Тестирование что метод get_books_for_children() возвращает список книг без жанров "Ужасы" и "Детективы"
-    @pytest.mark.parametrize("genre", ['Фантастика', 'Детективы'])
-    def test_get_books_for_children_no_books_for_children_with_horror_and_detective_genre(self, genre, collector):
+    def test_get_books_for_children_no_books_for_children_with_horror_and_detective_genre(self, collector):
         books_for_children = collector.get_books_for_children()
         assert books_for_children == ["Властелин Колец", "Ревизор", "Чайка"]
 
