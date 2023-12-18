@@ -41,12 +41,6 @@ class TestBooksCollector:
         collector.add_new_book(book_title)
         assert (book_title in collector.get_books_genre()) == expected_result
 
-    # Тестирование добавления книги с недопустимой длиной названия (более 41 символа)
-    # def test_add_new_book_long_book_title(self):
-    #     collector = BooksCollector()
-    #     book_name = "Сказка о Тройке. История непримиримой борьбы за повышение трудовой дисциплины, против бюрократизма, за высокий моральный уровень, против обезлички, за здоровую критику и здоровую самокритику, за личную ответственность каждого, за образцовое содержание отчетности и против недооценки собственных сил"
-    #     collector.add_new_book(book_name)
-    #     assert book_name not in collector.books_genre and len(collector.get_books_genre()) == 0
 
     # Тестирование что жанр книги правильно сохранен в словаре books_genre
     def test_set_book_genre_the_genre_is_correctly_saved_in_the_dict(self):
