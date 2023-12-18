@@ -123,10 +123,11 @@ class TestBooksCollector:
 
     # Тестирование что метод delete_book_from_favorites() удаляет из избранного книгу, которая там находилась
     def test_delete_book_from_favorites_should_remove_book(self, collector):
-        collector.favorites = ["Властелин Колец", "Институт", "Чайка"]
-        book_name = "Институт"
+        book_name = 'Гордость и предубеждение и зомби'
+        collector.add_new_book(book_name)
+        collector.add_book_in_favorites(book_name)
         collector.delete_book_from_favorites(book_name)
-        assert book_name not in collector.favorites and len(collector.favorites) == 2
+        assert book_name not in collector.get_list_of_favorites_books()
 
     # Тестирование что метод delete_book_from_favorites() не удаляет из избранного (не меняет список) книгу, которой там не было
     def test_delete_book_from_favorites_new_should_not_remove_nonexistent_book(self, collector):
