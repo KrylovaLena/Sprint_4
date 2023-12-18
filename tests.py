@@ -119,7 +119,7 @@ class TestBooksCollector:
     def test_add_book_in_favorites_book_not_in_genre(self, collector):
         book_name = "Палата №6"
         collector.add_book_in_favorites(book_name)
-        assert book_name not in collector.favorites
+        assert book_name not in collector.get_list_of_favorites_books()
 
     # Тестирование что метод delete_book_from_favorites() удаляет из избранного книгу, которая там находилась
     def test_delete_book_from_favorites_should_remove_book(self, collector):
