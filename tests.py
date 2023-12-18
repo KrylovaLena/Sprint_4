@@ -59,7 +59,7 @@ class TestBooksCollector:
     def test_set_book_genre_genre_is_not_set(self):
         collector = BooksCollector()
         collector.set_book_genre("Властелин Колец", "Фантастика")
-        assert "Властелин Колец" not in collector.books_genre
+        assert "Властелин Колец" not in collector.get_books_genre()
 
     # Тестирование, что полученный жанр соответствует значению в books_genre
     def test_get_book_genre_existing_book(self, collector):
@@ -112,7 +112,7 @@ class TestBooksCollector:
     def test_add_book_in_favorites_book_added_to_favorites(self, collector):
         book_name = "Ревизор"
         collector.add_book_in_favorites(book_name)
-        assert book_name in collector.favorites
+        assert book_name in collector.get_list_of_favorites_books()
 
     # Тестирование что метод add_book_in_favorites() повторно не добавляет книгу в избранное
     def test_add_book_in_favorites_duplicate_book(self, collector):
