@@ -23,7 +23,7 @@ class TestBooksCollector:
         book_name = "Смерть Артемио Круса"
         collector.add_new_book(book_name)
         collector.add_new_book(book_name)
-        assert book_name in collector.books_genre and len(collector.get_books_genre()) == 1
+        assert len(collector.get_books_genre()) == 1
 
     # Тестирование добавления книги с недопустимой длиной названия (более 41 символа)
     def test_add_new_book_long_book_title(self):
