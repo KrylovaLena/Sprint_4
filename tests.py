@@ -15,7 +15,7 @@ class TestBooksCollector:
     def test_add_new_book_add_three_books(self, name):
         collector = BooksCollector()
         collector.add_new_book(name)
-        assert name in collector.books_genre
+        assert name in collector.get_books_genre()
 
     # Тестирование повторного добавления книги с тем же названием
     def test_add_new_book_add_duplicate_book(self):
@@ -94,7 +94,7 @@ class TestBooksCollector:
         assert books_genre["Властелин Колец"] == "Фантастика"
 
     # Тестирование что метод get_books_for_children() возвращает список книг без жанров "Ужасы" и "Детективы"
-    @pytest.mark.parametrize('genre', ['Ужасы', 'Детективы'])
+    @pytest.mark.parametrize("genre", ['Фантастика', 'Детективы'])
     def test_get_books_for_children_no_books_for_children_with_horror_and_detective_genre(self, genre, collector):
         books_for_children = collector.get_books_for_children()
         assert books_for_children == ["Властелин Колец", "Ревизор", "Чайка"]
